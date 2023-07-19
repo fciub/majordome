@@ -1,1 +1,10 @@
-<p>provisions-list works!</p>
+<h2>My Provisions</h2>
+<mat-selection-list #allprovisions [multiple]="false">
+    <mat-list-option *ngFor="let provision of provisions" [value]="provision">
+      {{ provision.name }}
+    </mat-list-option>
+  </mat-selection-list>
+  
+  <p *ngIf="allprovisions.selectedOptions.hasValue()">
+    Provision selected : {{ allprovisions.selectedOptions.selected[0].value.name }}
+  </p>

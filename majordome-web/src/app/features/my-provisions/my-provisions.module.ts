@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
+
 import { ProvisionsListComponent } from './provisions-list/provisions-list.component';
 
 
@@ -9,7 +11,8 @@ import { ProvisionsListComponent } from './provisions-list/provisions-list.compo
     ProvisionsListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatListModule
   ],
   exports: [
     ProvisionsListComponent
