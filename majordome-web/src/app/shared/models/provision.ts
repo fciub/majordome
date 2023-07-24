@@ -1,4 +1,4 @@
 export interface Provision {
-    name: string;
-    quantity: number;
+  name: string;
+  quantity: number;
 }
