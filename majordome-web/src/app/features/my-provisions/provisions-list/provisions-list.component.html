@@ -6,6 +6,18 @@
 </mat-selection-list>
 
 <p *ngIf="allprovisions.selectedOptions.hasValue()">
-  Provision selected :
-  {{ allprovisions.selectedOptions.selected[0].value.name }}
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ allprovisions.selectedOptions.selected[0].value.name }}</mat-card-title>
+      <mat-card-subtitle>Quantity: {{ allprovisions.selectedOptions.selected[0].value.quantity }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <button (click)="increment(allprovisions.selectedOptions.selected[0].value)" mat-icon-button color="primary" aria-label="button with an add icon">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button (click)="decrement(allprovisions.selectedOptions.selected[0].value)" [disabled]="hasNoStock(allprovisions.selectedOptions.selected[0].value)" mat-icon-button color="primary" aria-label="button with a minus icon">
+        <mat-icon>remove</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </p>

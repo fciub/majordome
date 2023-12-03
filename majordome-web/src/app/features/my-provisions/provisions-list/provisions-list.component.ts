@@ -13,4 +13,17 @@ export class ProvisionsListComponent {
     { name: 'Butter', quantity: 1 },
     { name: 'Steak', quantity: 4 },
   ];
+
+  increment(provision: Provision) {
+    provision.quantity++;
+  }
+
+  decrement(provision: Provision) {
+    if(provision.quantity > 0)
+      provision.quantity--;
+  }
+
+  hasNoStock(provision: Provision): boolean {
+    return provision.quantity == 0;
+  }
 }
