@@ -1,9 +1,11 @@
-<h2>My Provisions</h2>
-<mat-selection-list #allprovisions [multiple]="false">
-  <mat-list-option *ngFor="let provision of provisions" [value]="provision">
-    {{ provision.name }}
-  </mat-list-option>
-</mat-selection-list>
+<h2 class="text-center font-bold">My Provisions</h2>
+<div class="max-w-md">
+  <mat-selection-list #allprovisions [multiple]="false">
+    <mat-list-option *ngFor="let provision of provisions" [value]="provision">
+      {{ provision.name }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
 
 <p *ngIf="allprovisions.selectedOptions.hasValue()">
   <mat-card>
